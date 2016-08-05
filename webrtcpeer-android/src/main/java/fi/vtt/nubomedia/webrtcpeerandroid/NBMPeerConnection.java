@@ -115,6 +115,10 @@ public class NBMPeerConnection implements PeerConnection.Observer, SdpObserver {
         observedDataChannels = new HashMap<>();
     }
 
+    public String getConnectionId() {
+        return connectionId;
+    }
+
     public DataChannel createDataChannel(String label, DataChannel.Init init)
     {
         ObservedDataChannel dataChannel = new ObservedDataChannel(label, init);

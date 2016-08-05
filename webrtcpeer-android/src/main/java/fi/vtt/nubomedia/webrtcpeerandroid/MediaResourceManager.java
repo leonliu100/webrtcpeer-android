@@ -102,7 +102,7 @@ final class MediaResourceManager implements NBMWebRTCPeer.Observer {
         this.executor = executor;
         this.factory = factory;
         renderVideo = true;
-        remoteVideoTracks = new HashMap<>();
+        remoteVideoTracks = new HashMap<MediaStream,VideoTrack>();
         videoCallEnabled = peerConnectionParameters.videoCallEnabled;
     }
 

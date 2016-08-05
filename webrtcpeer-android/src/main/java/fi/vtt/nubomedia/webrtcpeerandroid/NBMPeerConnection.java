@@ -112,7 +112,7 @@ public class NBMPeerConnection implements PeerConnection.Observer, SdpObserver {
         isInitiator = false;
         peerConnectionParameters = params;
         queuedRemoteCandidates = new LinkedList<IceCandidate>();
-        observedDataChannels = new HashMap<>();
+        observedDataChannels = new HashMap<String, ObservedDataChannel>();
     }
 
     public String getConnectionId() {
@@ -127,7 +127,7 @@ public class NBMPeerConnection implements PeerConnection.Observer, SdpObserver {
     }
 
     public HashMap<String, DataChannel> getDataChannels(){
-        HashMap<String, DataChannel> channels = new HashMap<>();
+        HashMap<String, DataChannel> channels = new HashMap<String, DataChannel>();
         for (HashMap.Entry<String, ObservedDataChannel> entry : observedDataChannels.entrySet()) {
             String key = entry.getKey();
             ObservedDataChannel value = entry.getValue();

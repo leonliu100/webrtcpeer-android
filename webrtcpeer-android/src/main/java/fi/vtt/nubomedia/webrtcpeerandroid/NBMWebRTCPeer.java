@@ -255,7 +255,7 @@ public class NBMWebRTCPeer{
                         (int)config.getReceiverVideoFormat().frameRate, config.getVideoBandwidth(), config.getVideoCodec().toString(), true,
                         config.getAudioBandwidth(), config.getAudioCodec().toString(),false, true);
 
-        iceServers = new LinkedList<>();
+        iceServers = new LinkedList<PeerConnection.IceServer>();
         addIceServer("stun:stun.l.google.com:19302");
     }
 
